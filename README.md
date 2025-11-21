@@ -55,5 +55,9 @@ See the following image for the UART pinout on the E5785 PCB (3.3V logic level):
 
 ![E5785 UART pinout](images/uart.jpg)
 
+I recommend bridging a magnetic reed switch from the boot pin to a ground
+connection (such as the large shielding can) to be able to enter USB loader mode
+with the case closed by simply placing a magnet near the modem's display.
+
 It's possible the other two pins nearby are for SWD debugging, but I haven't
 tested them.
