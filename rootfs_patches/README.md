@@ -20,6 +20,7 @@ Included patches:
 - Prometheus exporter for monitoring.
 - `atc` tool for sending AT commands to the modem's baseband.
 - `nanddump`, `nandwrite`, and `flash_erase` for NAND flash manipulation.
+- MicroPython
 
 > [!WARNING]
 > Do not ever pull the battery from the modem right after writing anything to
@@ -117,4 +118,20 @@ Finally, sync and reboot:
 ```sh
 sync
 reboot
+```
+
+## Build MicroPython
+
+Install NDK 25.2.9519653; then, in a MicroPython clone:
+
+```bash
+NDK_PATH="$HOME/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin"
+
+# Add a symlink to the generic llvm-strip to allow cross-compilation
+pushd "$NDK_PATH"
+ln -s llvm-strip strip
+popd
+
+export PATH="$NDK_PATH:$PATH"
+make CC='armv7a-linux-androideabi19-clang' CXX='armv7a-linux-androideabi19-clang++' LIBPTHREAD='' MICROPY_STANDALONE=1 MICROPY_PY_FFI=0 -j$(nproc)
 ```
