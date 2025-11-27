@@ -155,5 +155,5 @@ mkdir build && cd build
 make -j$(nproc)
 
 cd ../..
-make CC='armv7a-linux-androideabi19-clang' CXX='armv7a-linux-androideabi19-clang++' LIBPTHREAD='' MICROPY_PY_FFI=1 LDFLAGS_EXTRA='-L./libffi/build/.libs -l:libffi.a' CFLAGS_EXTRA='-isystem ./libffi/build/include' -j(nproc)
+make CC='armv7a-linux-androideabi19-clang' CXX='armv7a-linux-androideabi19-clang++' LIBPTHREAD='' MICROPY_PY_FFI=1 LIBFFI_LDFLAGS='-L./libffi/build/.libs -l:libffi.a' LIBFFI_CFLAGS='-isystem ./libffi/build/include' -j(nproc)
 ```
