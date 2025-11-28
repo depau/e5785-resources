@@ -21,7 +21,7 @@ class libc:
     perror = _lib.func("v", "perror", "s")  # void perror(const char*)
 
 
-def run_at_command(cmd: str, port=b"/dev/appvcom1") -> str | None:
+def run_at_command(cmd: str, port=b"/dev/appvcom1"):
     if not cmd.endswith("\r"):
         cmd = cmd + "\r"
 
