@@ -10,3 +10,7 @@ with OOB data back onto a modem where the OOB data has been corrupted, causing
 the blocks to be incorrectly marked as bad.
 
 This allows fully erasing the partition and re-flashing a backup.
+
+## `atc.py`
+
+MicroPython implementation of the `atc` tool to send AT commands to the modem.
