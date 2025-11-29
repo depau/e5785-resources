@@ -14,3 +14,9 @@ This allows fully erasing the partition and re-flashing a backup.
 ## `atc.py`
 
 MicroPython implementation of the `atc` tool to send AT commands to the modem.
+
+## `unlock.bat`
+
+Mysterious batch script found
+in [unlock_V7R22_2019-08-11.7z](https://4pda.to/forum/dl/post/26495458/unlock_V7R22_2019-08-11.7z)
+that supposedly unlocks the modem. Translated to English.
